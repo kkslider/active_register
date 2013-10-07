@@ -18,16 +18,16 @@ describe SQLObject do
       my_attr_accessible(:id, :fname, :lname, :house_id)
     end
 
-    # p Human.find(1)
-    # p Cat.find(1)
-    # p Cat.find(2)
+    p Human.find(1)
+    p Cat.find(1)
+    p Cat.find(2)
 
-    # p Human.all
-    # p Cat.all
+    p Human.all
+    p Cat.all
 
-    # c = Cat.new(:name => "Gizmo", :owner_id => 1)
-    # c.save # create
-    # c.save # update
+    c = Cat.new(:name => "Gizmo", :owner_id => 1)
+    c.save # create
+    c.save # update
   end
 
   it "#find finds objects by id" do

@@ -16,16 +16,16 @@ class Human < SQLObject
 end
 
 p Human.all
-#p Human.find(1)
-#p Cat.find(1)
-#p Cat.find(2)
+p Human.find(1)
+p Cat.find(1)
+p Cat.find(2)
 
-#p Human.all
-#p Cat.all
+p Human.all
+p Cat.all
 
-#c = Cat.new(:name => "Gizmo", :owner_id => 1)
-#c.save
+c = Cat.new(:name => "Gizmo", :owner_id => 1)
+c.save
 
-#h = Human.find(1)
-## just run an UPDATE; no values changed, so shouldnt hurt the db
-#h.save
+h = Human.find(1)
+# just run an UPDATE; no values changed, so shouldnt hurt the db
+h.save
