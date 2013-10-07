@@ -1,8 +1,4 @@
 class MassObject
-  #def self.all_attr
-    #@attributes ||= []
-  #end
-
   def self.attributes
     @attributes ||= []
   end
@@ -17,7 +13,6 @@ class MassObject
     end
   end
 
-
   def self.my_attr_accessible(*attributes)
     attributes.each do |attribute|
       self.attributes << attribute
@@ -31,8 +26,5 @@ class MyClass < MassObject
 end
 
 my_obj = MyClass.new(:x => :x_val, :y => :y_val)
-#my_obj = MyClass.new
-#my_obj.x = :x_val
-#my_obj.y = :y_val
 p my_obj.x
 p my_obj.y
