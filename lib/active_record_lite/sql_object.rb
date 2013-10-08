@@ -7,7 +7,7 @@ require_relative './searchable'
 
 
 class SQLObject < MassObject
-  extends Searchable
+  extend Searchable
   
   def self.set_table_name(table_name)
     @current_table = table_name
@@ -20,9 +20,10 @@ class SQLObject < MassObject
   def self.all
     #DBConnection.open(self.table_name)
     results = DBConnection.execute("select * from #{self.table_name}")
-    results.each do |row|
-      self.new(row)
-    end
+    self.parse_all(results)
+    # results.each do |row|
+   #    self.new(row)
+   #  end
   end
 
   def self.find(id)
