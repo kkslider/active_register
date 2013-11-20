@@ -3,13 +3,11 @@ class MassObject
     @attributes = attributes.map { |attr_name| attr_name.to_sym }
     
     attributes.each do |attribute|
-      # self.attributes << attribute
       attr_accessor(attribute)
     end
   end
 
   def self.attributes
-    # @attributes ||= []
     @attributes
   end
 

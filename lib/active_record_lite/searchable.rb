@@ -11,9 +11,7 @@ module Searchable
     WHERE
     #{keys_array}
     SQL
-    
-    # results.map { |result| self.new(result) }
+        
     self.parse_all(results)
   end
-  
 end

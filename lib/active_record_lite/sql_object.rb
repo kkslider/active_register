@@ -8,6 +8,7 @@ require_relative './searchable'
 
 class SQLObject < MassObject
   extend Searchable
+  extend Associatable
   
   def self.set_table_name(table_name)
     @current_table = table_name
@@ -18,22 +19,16 @@ class SQLObject < MassObject
   end
 
   def self.all
-    #DBConnection.open(self.table_name)
     results = DBConnection.execute("select * from #{self.table_name}")
     self.parse_all(results)
-    # results.each do |row|
-   #    self.new(row)
-   #  end
   end
 
   def self.find(id)
-    #DBConnection.open(self.table_name)
     result = DBConnection.execute("select * from #{self.table_name} where id = ?", id)
     result ? self.new(result.first) : nil
   end
 
   def create
-    # attribute_values = 
     DBConnection.execute(<<-SQL, *attribute_values)
       INSERT INTO
         #{self.class.table_name} (#{self.class.attributes.join(', ')})
