@@ -1,5 +1,5 @@
 # ActiveRegister
-## An implementation of core features of Ruby on Rails' Active Record.
+### An implementation of core features of Ruby on Rails' Active Record.
 
 - my_attr_accessible
 - all, find, create, update, and save class methods
